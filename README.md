@@ -1,0 +1,2 @@
+# SekedarStore
+analisis sendiri😂
