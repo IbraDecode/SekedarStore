@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  background: #f8fafc;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+* {
+  scrollbar-width: thin;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.button-primary {
+  @apply w-full bg-accent text-white rounded-2xl py-3 font-semibold shadow-soft hover:brightness-105 transition;
+}
+
+.button-secondary {
+  @apply w-full bg-white text-brand border border-slate-200 rounded-2xl py-3 font-semibold shadow-soft hover:bg-slate-50 transition;
+}
+
+.card {
+  @apply bg-white rounded-3xl shadow-soft p-4;
+}
+
+.field {
+  @apply w-full rounded-2xl border border-slate-200 px-4 py-3 bg-white focus:border-accent focus:outline-none;
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}

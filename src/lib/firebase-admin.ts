@@ -1,0 +1,19 @@
+import { cert, getApps, initializeApp } from 'firebase-admin/app';
+import { getFirestore } from 'firebase-admin/firestore';
+
+if (!process.env.FIREBASE_PROJECT_ID) {
+  console.warn('FIREBASE_PROJECT_ID not set. Firestore will be unavailable.');
+}
+
+const app =
+  getApps().length === 0
+    ? initializeApp({
+        credential: cert({
+          projectId: process.env.FIREBASE_PROJECT_ID,
+          clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
+          privateKey: process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, '\n'),
+        }),
+      })
+    : getApps()[0];
+
+export const firestore = getFirestore(app);
