@@ -71,7 +71,7 @@ export async function createDeposit(nominal: number, reffId: string): Promise<At
     reff_id: reffId,
     nominal: String(nominal),
     type: "ewallet",
-    method: "qris",
+    metode: "qris",
   });
 
   const res = await fetch(`${ATLANTIC_BASE}/deposit/create`, {
