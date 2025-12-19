@@ -5,7 +5,7 @@ import { BottomSheet } from '@/ui/components/BottomSheet';
 import { CatLottie } from '@/ui/components/CatLottie';
 import { ServiceSkeletonRow } from '@/ui/components/ServiceSkeletonRow';
 import Image from 'next/image';
-import { Search, Sparkles } from 'lucide-react';
+import { Eye, Heart, QrCode, Search, Sparkles, Users, X } from 'lucide-react';
 import Link from 'next/link';
 import igIcon from '@/ui/assets/instagram.svg';
 import ttIcon from '@/ui/assets/tiktok.svg';
@@ -17,42 +17,45 @@ export type ServiceItem = {
   category: string;
   min: number;
   max: number;
-  price: number;
+  pricePer1000: number;
+  basePricePer1000?: number;
+  markupType?: string;
+  markupValue?: number;
 };
 
 const categoryOptions = [
-  { id: 'All', label: 'Semua', icon: '🌟' },
-  { id: 'IG', label: 'Instagram', icon: 'IG' },
-  { id: 'TikTok', label: 'TikTok', icon: 'TT' },
-  { id: 'YouTube', label: 'YouTube', icon: 'YT' },
-  { id: 'Followers', label: 'Followers', icon: '👥' },
-  { id: 'Likes', label: 'Likes', icon: '❤️' },
-  { id: 'Views', label: 'Views', icon: '👀' }
+  { id: 'All', label: 'Semua', icon: <Sparkles size={14} /> },
+  { id: 'IG', label: 'Instagram', icon: <span className="text-[10px] font-black">IG</span> },
+  { id: 'TikTok', label: 'TikTok', icon: <span className="text-[10px] font-black">TT</span> },
+  { id: 'YouTube', label: 'YouTube', icon: <span className="text-[10px] font-black">YT</span> },
+  { id: 'Followers', label: 'Followers', icon: <Users size={14} /> },
+  { id: 'Likes', label: 'Likes', icon: <Heart size={14} /> },
+  { id: 'Views', label: 'Views', icon: <Eye size={14} /> }
 ];
 
 const mockServices: ServiceItem[] = [
-{ sid: 'ig-follow', name: 'Instagram Followers Real', category: 'IG Followers', min: 50, max: 10000, price: 25000 },
-  { sid: 'ig-like', name: 'IG Likes Cepat', category: 'IG Likes', min: 50, max: 5000, price: 12000 },
-  { sid: 'tt-view', name: 'TikTok Views Boost', category: 'TikTok Views', min: 100, max: 20000, price: 18000 },
-  { sid: 'yt-sub', name: 'YouTube Subscribers', category: 'YouTube Followers', min: 10, max: 2000, price: 90000 },
-  { sid: 'tt-like', name: 'TikTok Likes', category: 'TikTok Likes', min: 100, max: 15000, price: 15000 },
-  { sid: '2460', name: 'YouTube Short Likes NonDrop Max 20K', category: 'YouTube Shorts Views | Likes', min: 12, max: 50000, price: 18738 },
-  { sid: '2060', name: 'Shopee Followers Indonesia', category: 'Shopee Followers Indonesia', min: 120, max: 25000, price: 27087 },
-  { sid: '2061', name: 'Shopee Followers Indonesia MAX 30K', category: 'Shopee Followers Indonesia', min: 120, max: 36000, price: 43200 },
-  { sid: '2062', name: 'Shopee Followers Indonesia MAX 50K', category: 'Shopee Followers Indonesia', min: 60, max: 50000, price: 21384 },
-  { sid: '2067', name: 'Shopee Video Likes', category: 'Shopee Video Views/Likes/Favorite/Shares', min: 12, max: 40000, price: 9980 },
-  { sid: '2084', name: 'Tokopedia Feed Video Views', category: 'Tokopedia Feed', min: 120, max: 1000000, price: 12962 },
-  { sid: '2087', name: 'Tiktok Comment Likes', category: 'Tiktok Comments', min: 12, max: 100000, price: 7128 },
-  { sid: '2088', name: 'Tiktok Emoji Comments', category: 'Tiktok Comments', min: 12, max: 100000, price: 18533 },
-  { sid: '2091', name: 'Snack Video Likes', category: 'Snack Video Likes', min: 60, max: 50000, price: 9945 },
-  { sid: '2092', name: 'Snack Video Likes Real Instan Max10K', category: 'Snack Video Likes', min: 60, max: 10000, price: 11994 },
-  { sid: '2093', name: 'Snack Video Views FAST INSTAN MAX 1M', category: 'Snack Video Views', min: 60000, max: 1000000, price: 13527 },
-  { sid: '2094', name: 'Shopee Live Stream Views Max 50K', category: 'Shopee Live Stream View S3', min: 12, max: 100000, price: 68429 },
-  { sid: '4187', name: 'Tiktok Likes', category: 'Tiktok Combined [ Video Services ]', min: 12, max: 500000, price: 5702 },
-  { sid: '4289', name: 'TikTok 3x Views + Shares + Downloads + Saves', category: 'Tiktok Combined [ Video Services ]', min: 120, max: 2147483647, price: 3564 },
-  { sid: '667', label: 'TikTok Followers', category: 'Tiktok Followers | New Update | 15/04/2025', min: 12, max: 10000000, price: 16252 },
-  { sid: '2115', name: 'Instagram Likes Max 1M', category: 'Instagram Likes | New Update | 15/04/2025', min: 12, max: 1000000, price: 4039 },
-  { sid: '2116', name: 'Instagram Likes Max 50M', category: 'Instagram Likes | New Update | 15/04/2025', min: 12, max: 50000000, price: 4281 }
+  { sid: 'ig-follow', name: 'Instagram Followers Real', category: 'IG Followers', min: 50, max: 10000, pricePer1000: 25000 },
+  { sid: 'ig-like', name: 'IG Likes Cepat', category: 'IG Likes', min: 50, max: 5000, pricePer1000: 12000 },
+  { sid: 'tt-view', name: 'TikTok Views Boost', category: 'TikTok Views', min: 100, max: 20000, pricePer1000: 18000 },
+  { sid: 'yt-sub', name: 'YouTube Subscribers', category: 'YouTube Followers', min: 10, max: 2000, pricePer1000: 90000 },
+  { sid: 'tt-like', name: 'TikTok Likes', category: 'TikTok Likes', min: 100, max: 15000, pricePer1000: 15000 },
+  { sid: '2460', name: 'YouTube Short Likes NonDrop Max 20K', category: 'YouTube Shorts Views | Likes', min: 12, max: 50000, pricePer1000: 18738 },
+  { sid: '2060', name: 'Shopee Followers Indonesia', category: 'Shopee Followers Indonesia', min: 120, max: 25000, pricePer1000: 27087 },
+  { sid: '2061', name: 'Shopee Followers Indonesia MAX 30K', category: 'Shopee Followers Indonesia', min: 120, max: 36000, pricePer1000: 43200 },
+  { sid: '2062', name: 'Shopee Followers Indonesia MAX 50K', category: 'Shopee Followers Indonesia', min: 60, max: 50000, pricePer1000: 21384 },
+  { sid: '2067', name: 'Shopee Video Likes', category: 'Shopee Video Views/Likes/Favorite/Shares', min: 12, max: 40000, pricePer1000: 9980 },
+  { sid: '2084', name: 'Tokopedia Feed Video Views', category: 'Tokopedia Feed', min: 120, max: 1000000, pricePer1000: 12962 },
+  { sid: '2087', name: 'Tiktok Comment Likes', category: 'Tiktok Comments', min: 12, max: 100000, pricePer1000: 7128 },
+  { sid: '2088', name: 'Tiktok Emoji Comments', category: 'Tiktok Comments', min: 12, max: 100000, pricePer1000: 18533 },
+  { sid: '2091', name: 'Snack Video Likes', category: 'Snack Video Likes', min: 60, max: 50000, pricePer1000: 9945 },
+  { sid: '2092', name: 'Snack Video Likes Real Instan Max10K', category: 'Snack Video Likes', min: 60, max: 10000, pricePer1000: 11994 },
+  { sid: '2093', name: 'Snack Video Views FAST INSTAN MAX 1M', category: 'Snack Video Views', min: 60000, max: 1000000, pricePer1000: 13527 },
+  { sid: '2094', name: 'Shopee Live Stream Views Max 50K', category: 'Shopee Live Stream View S3', min: 12, max: 100000, pricePer1000: 68429 },
+  { sid: '4187', name: 'Tiktok Likes', category: 'Tiktok Combined [ Video Services ]', min: 12, max: 500000, pricePer1000: 5702 },
+  { sid: '4289', name: 'TikTok 3x Views + Shares + Downloads + Saves', category: 'Tiktok Combined [ Video Services ]', min: 120, max: 2147483647, pricePer1000: 3564 },
+  { sid: '667', name: 'TikTok Followers', category: 'Tiktok Followers | New Update | 15/04/2025', min: 12, max: 10000000, pricePer1000: 16252 },
+  { sid: '2115', name: 'Instagram Likes Max 1M', category: 'Instagram Likes | New Update | 15/04/2025', min: 12, max: 1000000, pricePer1000: 4039 },
+  { sid: '2116', name: 'Instagram Likes Max 50M', category: 'Instagram Likes | New Update | 15/04/2025', min: 12, max: 50000000, pricePer1000: 4281 }
 ];
 
 const categoryIcon = (category: string) => {
@@ -65,18 +68,14 @@ const categoryIcon = (category: string) => {
 
 export default function HomePage() {
   const [sheetOpen, setSheetOpen] = useState(false);
-  const [loading, setLoading] = useState(true); // Start with true for initial loading
-  const [initialLoading, setInitialLoading] = useState(true); // Initial app loading
+  const [loading, setLoading] = useState(true);
+  const [hydrate, setHydrate] = useState(false);
   const [query, setQuery] = useState('');
   const [activeTab, setActiveTab] = useState('All');
   const [services, setServices] = useState<ServiceItem[]>([]);
+  const [loadError, setLoadError] = useState('');
 
   useEffect(() => {
-    // Initial loading check
-    const timer = setTimeout(() => {
-      setInitialLoading(false);
-    }, 2000); // Show initial loading for 2 seconds
-
     // onboarding flow enforcement on client
     const onboarded = typeof window !== 'undefined' && localStorage.getItem('skd_onboarded');
     const help = typeof window !== 'undefined' && localStorage.getItem('skd_help_seen');
@@ -85,32 +84,31 @@ export default function HomePage() {
     } else if (!help) {
       window.location.href = '/cara-pakai';
     }
-
-    return () => clearTimeout(timer);
+    setHydrate(true);
   }, []);
 
   useEffect(() => {
-    // Skip service loading if initial loading
-    if (initialLoading) return;
+    if (!hydrate) return;
 
     const loadServices = async () => {
       setLoading(true);
+      setLoadError('');
       try {
         const res = await fetch('/api/services');
         const data = await res.json();
         if (data.services) {
           setServices(data.services);
+          return;
         }
       } catch (err) {
         console.error('Failed to load services:', err);
-        setServices(mockServices); // Fallback to mock
-      } finally {
-        setLoading(false);
       }
+      setLoadError('Gagal memuat layanan. Menampilkan data cadangan.');
+      setServices(mockServices); // Fallback to mock
     };
     
-    loadServices();
-  }, [initialLoading]);
+    loadServices().finally(() => setLoading(false));
+  }, [hydrate]);
 
   const filtered = useMemo(() => {
     if (!services.length) return [];
@@ -145,19 +143,9 @@ export default function HomePage() {
     });
   }, [services, query, activeTab]);
 
-  // Initial loading overlay
-  if (initialLoading) {
-    return (
-      <div className="flex h-screen flex-col items-center justify-center bg-slate-50">
-        <CatLottie variant="loading" size="lg" />
-        <p className="mt-4 text-lg font-semibold text-slate-700">Memuat layanan...</p>
-      </div>
-    );
-  }
-
   return (
-    <div className="min-h-screen overflow-hidden bg-slate-50">
-      <main className="mx-auto flex h-screen max-w-md flex-col gap-4 px-4 py-5">
+    <div className="min-h-screen bg-slate-50">
+      <main className="mx-auto flex min-h-screen max-w-md flex-col gap-4 px-4 py-5 pb-24">
         <header className="flex items-center justify-between">
           <div>
             <div className="text-sm text-slate-500">Sekedar Store</div>
@@ -188,13 +176,21 @@ export default function HomePage() {
                 setSheetOpen(true);
               }}
             >
-              {item}
+              <span className="inline-flex items-center justify-center gap-2 text-sm">
+                {item === 'Followers' && <Users size={16} />}
+                {item === 'Likes' && <Heart size={16} />}
+                {item === 'Views' && <Eye size={16} />}
+                {item}
+              </span>
             </button>
           ))}
         </div>
 
         <button className="button-primary" onClick={() => setSheetOpen(true)}>
-          Pilih Layanan
+          <div className="flex items-center justify-center gap-2">
+            <QrCode size={18} />
+            <span>Pilih Layanan</span>
+          </div>
         </button>
 
         <section className="card flex flex-col gap-3">
@@ -202,20 +198,26 @@ export default function HomePage() {
             <Sparkles size={16} /> Top layanan
           </div>
           <div className="space-y-3">
-            {services.slice(0, 5).map((svc) => (
-              <div key={svc.sid} className="flex items-center gap-3 rounded-2xl bg-slate-50 p-3">
-                <div className="h-10 w-10 overflow-hidden rounded-full bg-white shadow-soft">
-                  <Image src={categoryIcon(svc.category)} alt={svc.category} width={40} height={40} />
+            {(loading ? mockServices : services).slice(0, 5).map((svc) => {
+              const displayPrice = svc.pricePer1000 ?? (svc as any).price ?? 0;
+              return (
+                <div key={svc.sid} className="flex items-center gap-3 rounded-2xl bg-slate-50 p-3">
+                  <div className="h-10 w-10 overflow-hidden rounded-full bg-white shadow-soft">
+                    <Image src={categoryIcon(svc.category)} alt={svc.category} width={40} height={40} />
+                  </div>
+                  <div className="flex-1">
+                    <div className="text-sm font-semibold">{svc.name}</div>
+                    <div className="text-xs text-slate-500">Min {svc.min} - Max {svc.max}</div>
+                  </div>
+                  <div className="text-right text-xs font-semibold text-accent min-w-[90px]">
+                    Rp{displayPrice.toLocaleString('id-ID')}
+                  </div>
+                  <Link href={`/checkout/${svc.sid}`} className="rounded-full bg-accent px-3 py-2 text-xs font-semibold text-white">
+                    Pilih
+                  </Link>
                 </div>
-                <div className="flex-1">
-                  <div className="text-sm font-semibold">{svc.name}</div>
-                  <div className="text-xs text-slate-500">Min {svc.min} - Max {svc.max}</div>
-                </div>
-                <Link href={`/checkout/${svc.sid}`} className="rounded-full bg-accent px-3 py-2 text-xs font-semibold text-white">
-                  Pilih
-                </Link>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </section>
       </main>
@@ -237,7 +239,7 @@ export default function HomePage() {
               onClick={() => setActiveTab(cat.id)}
               className={`rounded-full px-3 py-1 text-xs font-semibold flex items-center gap-2 ${activeTab === cat.id ? 'bg-accent text-white' : 'bg-slate-100 text-slate-600'}`}
             >
-              <span className="text-sm">{cat.icon}</span>
+              <span className="text-sm flex items-center justify-center">{cat.icon}</span>
               {cat.label}
             </button>
           ))}
@@ -269,9 +271,18 @@ export default function HomePage() {
                   <div className="text-sm font-semibold">{svc.name}</div>
                   <div className="text-xs text-slate-500">Min {svc.min} - Max {svc.max}</div>
                 </div>
-                <div className="text-xs font-semibold text-accent">Rp{svc.price.toLocaleString('id-ID')}</div>
+                <div className="text-xs font-semibold text-accent">
+                  Rp{(svc.pricePer1000 ?? (svc as any).price ?? 0).toLocaleString('id-ID')}
+                </div>
               </Link>
             ))}
+          </div>
+        )}
+
+        {loadError && (
+          <div className="mt-4 flex items-center gap-2 rounded-2xl border border-amber-200 bg-amber-50 px-3 py-2 text-xs text-amber-900">
+            <X size={14} className="text-amber-500" />
+            {loadError}
           </div>
         )}
       </BottomSheet>

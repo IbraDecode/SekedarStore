@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { CatLottie } from '@/ui/components/CatLottie';
+import { Compass, Eye, Heart, Users } from 'lucide-react';
 
 const steps = [0, 1, 2, 3] as const;
 
@@ -50,7 +51,7 @@ export default function OnboardingPage() {
             <div className="w-32 h-32">
               <CatLottie variant="intro" size="lg" />
             </div>
-            <h1 className="text-3xl font-bold text-slate-900">Halo! 👋</h1>
+            <h1 className="text-3xl font-bold text-slate-900">Halo, selamat datang</h1>
             <p className="text-slate-600 max-w-sm leading-relaxed">
               Saya kucing digital yang akan bantu kamu beli layanan sosial media dengan cepat dan mudah.
             </p>
@@ -69,10 +70,10 @@ export default function OnboardingPage() {
             <p className="text-slate-600 mb-4">Apa yang kamu butuhkan?</p>
             <div className="grid grid-cols-2 gap-3 w-full max-w-sm">
               {[
-                { icon: '👥', label: 'Followers', desc: 'Tambah followers' },
-                { icon: '❤️', label: 'Likes', desc: 'Tambah likes' },
-                { icon: '👀', label: 'Views', desc: 'Tambah views' },
-                { icon: '🔍', label: 'Lihat dulu', desc: 'Jelajah layanan' }
+                { icon: <Users size={22} />, label: 'Followers', desc: 'Tambah followers' },
+                { icon: <Heart size={22} />, label: 'Likes', desc: 'Tambah likes' },
+                { icon: <Eye size={22} />, label: 'Views', desc: 'Tambah views' },
+                { icon: <Compass size={22} />, label: 'Lihat dulu', desc: 'Jelajah layanan' }
               ].map((item) => (
                 <button
                   key={item.label}
@@ -82,7 +83,7 @@ export default function OnboardingPage() {
                     next();
                   }}
                 >
-                  <div className="text-2xl mb-1">{item.icon}</div>
+                  <div className="text-2xl mb-1 text-brand">{item.icon}</div>
                   <div className="font-semibold text-slate-900">{item.label}</div>
                   <div className="text-xs text-slate-500">{item.desc}</div>
                 </button>
@@ -122,7 +123,7 @@ export default function OnboardingPage() {
             <div className="w-32 h-32">
               <CatLottie variant="welcome" size="lg" />
             </div>
-            <h2 className="text-2xl font-bold text-slate-900">Siap! 🎉</h2>
+            <h2 className="text-2xl font-bold text-slate-900">Siap!</h2>
             <p className="text-slate-600 max-w-sm leading-relaxed">
               Sekarang kamu bisa mulai beli layanan sosial media dengan harga terjangkau.
             </p>

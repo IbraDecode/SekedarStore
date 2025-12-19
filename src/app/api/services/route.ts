@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { firestore } from "@/lib/firebase-admin";
+import { calculateSellPricePerThousand } from "@/lib/pricing";
 
 export async function GET() {
   try {
@@ -7,13 +8,22 @@ export async function GET() {
     
     const services = snapshot.docs.map((doc: any) => {
       const data = doc.data();
+      const sellPricePer1000 = calculateSellPricePerThousand(
+        Number(data.base_price_per_1000 || 0),
+        String(data.markup_type || "percent"),
+        Number(data.markup_value || 0)
+      );
+
       return {
         sid: data.sid,
         name: data.name,
         category: data.category,
         min: data.min,
         max: data.max,
-        price: Math.ceil((data.base_price_per_1000 || 0) * 1.2), // Include 20% markup
+        pricePer1000: sellPricePer1000,
+        basePricePer1000: Number(data.base_price_per_1000 || 0),
+        markupType: String(data.markup_type || "percent"),
+        markupValue: Number(data.markup_value || 0),
       };
     });
 
