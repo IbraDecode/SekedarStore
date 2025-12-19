@@ -1,33 +1,49 @@
-import { NextResponse } from 'next/server';
-import { firestore } from '@/lib/firebase-admin';
-import { fetchServices } from '@/lib/zaynflazz';
+import { fetchServices } from "@/lib/zaynflazz";
+import { db } from "@/lib/firebase-admin";
+
+function parseNumber(val: any): number {
+  if (typeof val === "number") return val;
+  if (!val) return 0;
+  return Number(String(val).replace(/[^\d]/g, ""));
+}
 
 export async function POST() {
-  try {
-    const data = await fetchServices();
-    const items = Array.isArray(data?.data) ? data.data : [];
+  const result = await fetchServices();
 
-    const batch = firestore.batch();
-    items.slice(0, 50).forEach((item: any) => {
-      const sid = String(item.id);
-      const ref = firestore.collection('services').doc(sid);
-      batch.set(ref, {
+  const list = Array.isArray(result.data)
+    ? result.data
+    : Array.isArray(result)
+    ? result
+    : [];
+
+  const batch = db.batch();
+
+  list.forEach((item: any) => {
+    const sid = String(item.sid || item.id);
+    if (!sid) return;
+
+    const ref = db.collection("services").doc(sid);
+
+    batch.set(
+      ref,
+      {
         sid,
-        name: item.name,
-        category: item.category,
-        min: Number(item.min) || 0,
-        max: Number(item.max) || 0,
-        base_price_per_1000: Number(item.price) || 0,
-        markup_type: 'percent',
-        markup_value: 20,
+        name: item.layanan || item.name || "-",
+        category: item.kategori || item.category || "Lainnya",
+        min: parseNumber(item.min),
+        max: parseNumber(item.max),
+        base_price_per_1000: parseNumber(item.harga),
         is_active: true,
-        updatedAt: new Date().toISOString(),
-      }, { merge: true });
-    });
-    await batch.commit();
+        updatedAt: new Date(),
+      },
+      { merge: true }
+    );
+  });
 
-    return NextResponse.json({ success: true, count: items.length });
-  } catch (err: any) {
-    return NextResponse.json({ message: err.message || 'sync failed' }, { status: 500 });
-  }
+  await batch.commit();
+
+  return Response.json({
+    status: true,
+    total: list.length,
+  });
 }
