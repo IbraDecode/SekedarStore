@@ -11,3 +11,718 @@
  ○ Compiling /api/services ...
  ✓ Compiled /api/services in 719ms (103 modules)
  GET /api/services 200 in 1360ms
+ ○ Compiling / ...
+ ✓ Compiled / in 2.5s (1323 modules)
+ GET / 200 in 2769ms
+ ✓ Compiled /api/services in 114ms (711 modules)
+ GET /api/services 200 in 435ms
+ GET / 200 in 139ms
+ GET /api/services 200 in 176ms
+ GET /api/services 200 in 180ms
+ GET /api/services 200 in 185ms
+ ○ Compiling /checkout/[sid] ...
+ ✓ Compiled /checkout/[sid] in 563ms (1364 modules)
+ ⨯ Error: Cannot find module './vendor-chunks/@opentelemetry.js'
+Require stack:
+- /var/www/SekedarStore/.next/server/webpack-runtime.js
+- /var/www/SekedarStore/.next/server/app/checkout/[sid]/page.js
+- /var/www/SekedarStore/node_modules/next/dist/server/require.js
+- /var/www/SekedarStore/node_modules/next/dist/server/load-components.js
+- /var/www/SekedarStore/node_modules/next/dist/build/utils.js
+- /var/www/SekedarStore/node_modules/next/dist/server/dev/static-paths-worker.js
+- /var/www/SekedarStore/node_modules/next/dist/compiled/jest-worker/processChild.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+    at /var/www/SekedarStore/node_modules/next/dist/server/require-hook.js:55:36
+    at Module._load (node:internal/modules/cjs/loader:1038:27)
+    at Module.require (node:internal/modules/cjs/loader:1289:19)
+    at mod.require (/var/www/SekedarStore/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:182:18)
+    at __webpack_require__.f.require (/var/www/SekedarStore/.next/server/webpack-runtime.js:203:28)
+    at /var/www/SekedarStore/.next/server/webpack-runtime.js:116:40
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (/var/www/SekedarStore/.next/server/webpack-runtime.js:115:67) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/var/www/SekedarStore/.next/server/webpack-runtime.js',
+    '/var/www/SekedarStore/.next/server/app/checkout/[sid]/page.js',
+    '/var/www/SekedarStore/node_modules/next/dist/server/require.js',
+    '/var/www/SekedarStore/node_modules/next/dist/server/load-components.js',
+    '/var/www/SekedarStore/node_modules/next/dist/build/utils.js',
+    '/var/www/SekedarStore/node_modules/next/dist/server/dev/static-paths-worker.js',
+    '/var/www/SekedarStore/node_modules/next/dist/compiled/jest-worker/processChild.js'
+  ],
+  page: '/checkout/2060'
+}
+ ○ Compiling /_error ...
+ ✓ Compiled /_error in 1447ms (1574 modules)
+ ⨯ Error: Cannot find module './vendor-chunks/@opentelemetry.js'
+Require stack:
+- /var/www/SekedarStore/.next/server/webpack-runtime.js
+- /var/www/SekedarStore/.next/server/app/checkout/[sid]/page.js
+- /var/www/SekedarStore/node_modules/next/dist/server/require.js
+- /var/www/SekedarStore/node_modules/next/dist/server/load-components.js
+- /var/www/SekedarStore/node_modules/next/dist/build/utils.js
+- /var/www/SekedarStore/node_modules/next/dist/server/dev/static-paths-worker.js
+- /var/www/SekedarStore/node_modules/next/dist/compiled/jest-worker/processChild.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+    at /var/www/SekedarStore/node_modules/next/dist/server/require-hook.js:55:36
+    at Module._load (node:internal/modules/cjs/loader:1038:27)
+    at Module.require (node:internal/modules/cjs/loader:1289:19)
+    at mod.require (/var/www/SekedarStore/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:182:18)
+    at __webpack_require__.f.require (/var/www/SekedarStore/.next/server/webpack-runtime.js:203:28)
+    at /var/www/SekedarStore/.next/server/webpack-runtime.js:116:40
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (/var/www/SekedarStore/.next/server/webpack-runtime.js:115:67) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/var/www/SekedarStore/.next/server/webpack-runtime.js',
+    '/var/www/SekedarStore/.next/server/app/checkout/[sid]/page.js',
+    '/var/www/SekedarStore/node_modules/next/dist/server/require.js',
+    '/var/www/SekedarStore/node_modules/next/dist/server/load-components.js',
+    '/var/www/SekedarStore/node_modules/next/dist/build/utils.js',
+    '/var/www/SekedarStore/node_modules/next/dist/server/dev/static-paths-worker.js',
+    '/var/www/SekedarStore/node_modules/next/dist/compiled/jest-worker/processChild.js'
+  ],
+  page: '/checkout/2060'
+}
+ ⨯ Error: Cannot find module './vendor-chunks/@opentelemetry.js'
+Require stack:
+- /var/www/SekedarStore/.next/server/webpack-runtime.js
+- /var/www/SekedarStore/.next/server/app/checkout/[sid]/page.js
+- /var/www/SekedarStore/node_modules/next/dist/server/require.js
+- /var/www/SekedarStore/node_modules/next/dist/server/load-components.js
+- /var/www/SekedarStore/node_modules/next/dist/build/utils.js
+- /var/www/SekedarStore/node_modules/next/dist/server/dev/static-paths-worker.js
+- /var/www/SekedarStore/node_modules/next/dist/compiled/jest-worker/processChild.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+    at /var/www/SekedarStore/node_modules/next/dist/server/require-hook.js:55:36
+    at Module._load (node:internal/modules/cjs/loader:1038:27)
+    at Module.require (node:internal/modules/cjs/loader:1289:19)
+    at mod.require (/var/www/SekedarStore/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:182:18)
+    at __webpack_require__.f.require (/var/www/SekedarStore/.next/server/webpack-runtime.js:203:28)
+    at /var/www/SekedarStore/.next/server/webpack-runtime.js:116:40
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (/var/www/SekedarStore/.next/server/webpack-runtime.js:115:67) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/var/www/SekedarStore/.next/server/webpack-runtime.js',
+    '/var/www/SekedarStore/.next/server/app/checkout/[sid]/page.js',
+    '/var/www/SekedarStore/node_modules/next/dist/server/require.js',
+    '/var/www/SekedarStore/node_modules/next/dist/server/load-components.js',
+    '/var/www/SekedarStore/node_modules/next/dist/build/utils.js',
+    '/var/www/SekedarStore/node_modules/next/dist/server/dev/static-paths-worker.js',
+    '/var/www/SekedarStore/node_modules/next/dist/compiled/jest-worker/processChild.js'
+  ],
+  page: '/checkout/2060'
+}
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, lstat '/var/www/SekedarStore/.next/server/vendor-chunks/@opentelemetry.js'
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving './vendor-chunks/@opentelemetry' in /var/www/SekedarStore/.next/server for build dependencies doesn't lead to expected result '/var/www/SekedarStore/.next/server/vendor-chunks/@opentelemetry.js', but to 'Error: Can't resolve './vendor-chunks/@opentelemetry' in '/var/www/SekedarStore/.next/server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ./vendor-chunks/@opentelemetry (expected /var/www/SekedarStore/.next/server/vendor-chunks/@opentelemetry.js)
+<w>  at file dependencies /var/www/SekedarStore/.next/server/webpack-runtime.js
+<w>  at file /var/www/SekedarStore/.next/server/webpack-runtime.js
+<w>  at file dependencies /var/www/SekedarStore/.next/server/pages/_app.js
+<w>  at file /var/www/SekedarStore/.next/server/pages/_app.js
+<w>  at file dependencies /var/www/SekedarStore/node_modules/next/dist/server/require.js
+<w>  at file /var/www/SekedarStore/node_modules/next/dist/server/require.js
+<w>  at file dependencies /var/www/SekedarStore/node_modules/next/dist/server/load-components.js
+<w>  at file /var/www/SekedarStore/node_modules/next/dist/server/load-components.js
+<w>  at file dependencies /var/www/SekedarStore/node_modules/next/dist/build/utils.js
+<w>  at file /var/www/SekedarStore/node_modules/next/dist/build/utils.js
+<w>  at file dependencies /var/www/SekedarStore/node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js
+<w>  at file /var/www/SekedarStore/node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js
+<w>  at resolve commonjs /var/www/SekedarStore/node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js
+ ⨯ Error: Cannot find module './vendor-chunks/@opentelemetry.js'
+Require stack:
+- /var/www/SekedarStore/.next/server/webpack-runtime.js
+- /var/www/SekedarStore/.next/server/app/checkout/[sid]/page.js
+- /var/www/SekedarStore/node_modules/next/dist/server/require.js
+- /var/www/SekedarStore/node_modules/next/dist/server/load-components.js
+- /var/www/SekedarStore/node_modules/next/dist/build/utils.js
+- /var/www/SekedarStore/node_modules/next/dist/server/dev/static-paths-worker.js
+- /var/www/SekedarStore/node_modules/next/dist/compiled/jest-worker/processChild.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+    at /var/www/SekedarStore/node_modules/next/dist/server/require-hook.js:55:36
+    at Module._load (node:internal/modules/cjs/loader:1038:27)
+    at Module.require (node:internal/modules/cjs/loader:1289:19)
+    at mod.require (/var/www/SekedarStore/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:182:18)
+    at __webpack_require__.f.require (/var/www/SekedarStore/.next/server/webpack-runtime.js:203:28)
+    at /var/www/SekedarStore/.next/server/webpack-runtime.js:116:40
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (/var/www/SekedarStore/.next/server/webpack-runtime.js:115:67) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/var/www/SekedarStore/.next/server/webpack-runtime.js',
+    '/var/www/SekedarStore/.next/server/app/checkout/[sid]/page.js',
+    '/var/www/SekedarStore/node_modules/next/dist/server/require.js',
+    '/var/www/SekedarStore/node_modules/next/dist/server/load-components.js',
+    '/var/www/SekedarStore/node_modules/next/dist/build/utils.js',
+    '/var/www/SekedarStore/node_modules/next/dist/server/dev/static-paths-worker.js',
+    '/var/www/SekedarStore/node_modules/next/dist/compiled/jest-worker/processChild.js'
+  ],
+  page: '/checkout/2060'
+}
+ ⨯ Error: Cannot find module './vendor-chunks/@opentelemetry.js'
+Require stack:
+- /var/www/SekedarStore/.next/server/webpack-runtime.js
+- /var/www/SekedarStore/.next/server/app/checkout/[sid]/page.js
+- /var/www/SekedarStore/node_modules/next/dist/server/require.js
+- /var/www/SekedarStore/node_modules/next/dist/server/load-components.js
+- /var/www/SekedarStore/node_modules/next/dist/build/utils.js
+- /var/www/SekedarStore/node_modules/next/dist/server/dev/static-paths-worker.js
+- /var/www/SekedarStore/node_modules/next/dist/compiled/jest-worker/processChild.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+    at /var/www/SekedarStore/node_modules/next/dist/server/require-hook.js:55:36
+    at Module._load (node:internal/modules/cjs/loader:1038:27)
+    at Module.require (node:internal/modules/cjs/loader:1289:19)
+    at mod.require (/var/www/SekedarStore/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:182:18)
+    at __webpack_require__.f.require (/var/www/SekedarStore/.next/server/webpack-runtime.js:203:28)
+    at /var/www/SekedarStore/.next/server/webpack-runtime.js:116:40
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (/var/www/SekedarStore/.next/server/webpack-runtime.js:115:67) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/var/www/SekedarStore/.next/server/webpack-runtime.js',
+    '/var/www/SekedarStore/.next/server/app/checkout/[sid]/page.js',
+    '/var/www/SekedarStore/node_modules/next/dist/server/require.js',
+    '/var/www/SekedarStore/node_modules/next/dist/server/load-components.js',
+    '/var/www/SekedarStore/node_modules/next/dist/build/utils.js',
+    '/var/www/SekedarStore/node_modules/next/dist/server/dev/static-paths-worker.js',
+    '/var/www/SekedarStore/node_modules/next/dist/compiled/jest-worker/processChild.js'
+  ],
+  page: '/checkout/2060'
+}
+ GET /checkout/2060 500 in 270ms
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 553ms (1544 modules)
+ GET /checkout/2060 404 in 745ms
+ GET /_next/static/css/app/layout.css?v=1766137202178 404 in 18ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 40ms
+ GET /_next/static/chunks/app/not-found.js 404 in 42ms
+ GET /_next/static/chunks/main-app.js?v=1766137202178 404 in 36ms
+ ⨯ Error: Cannot find module './vendor-chunks/@swc.js'
+Require stack:
+- /var/www/SekedarStore/.next/server/webpack-runtime.js
+- /var/www/SekedarStore/.next/server/app/checkout/[sid]/page.js
+- /var/www/SekedarStore/node_modules/next/dist/server/require.js
+- /var/www/SekedarStore/node_modules/next/dist/server/load-components.js
+- /var/www/SekedarStore/node_modules/next/dist/build/utils.js
+- /var/www/SekedarStore/node_modules/next/dist/server/dev/static-paths-worker.js
+- /var/www/SekedarStore/node_modules/next/dist/compiled/jest-worker/processChild.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+    at /var/www/SekedarStore/node_modules/next/dist/server/require-hook.js:55:36
+    at Module._load (node:internal/modules/cjs/loader:1038:27)
+    at Module.require (node:internal/modules/cjs/loader:1289:19)
+    at mod.require (/var/www/SekedarStore/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:182:18)
+    at __webpack_require__.f.require (/var/www/SekedarStore/.next/server/webpack-runtime.js:198:28)
+    at /var/www/SekedarStore/.next/server/webpack-runtime.js:111:40
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (/var/www/SekedarStore/.next/server/webpack-runtime.js:110:67) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/var/www/SekedarStore/.next/server/webpack-runtime.js',
+    '/var/www/SekedarStore/.next/server/app/checkout/[sid]/page.js',
+    '/var/www/SekedarStore/node_modules/next/dist/server/require.js',
+    '/var/www/SekedarStore/node_modules/next/dist/server/load-components.js',
+    '/var/www/SekedarStore/node_modules/next/dist/build/utils.js',
+    '/var/www/SekedarStore/node_modules/next/dist/server/dev/static-paths-worker.js',
+    '/var/www/SekedarStore/node_modules/next/dist/compiled/jest-worker/processChild.js'
+  ],
+  page: '/checkout/2060'
+}
+ GET /checkout/2060 500 in 263ms
+ ⨯ Error: Cannot find module './vendor-chunks/@swc.js'
+Require stack:
+- /var/www/SekedarStore/.next/server/webpack-runtime.js
+- /var/www/SekedarStore/.next/server/app/checkout/[sid]/page.js
+- /var/www/SekedarStore/node_modules/next/dist/server/require.js
+- /var/www/SekedarStore/node_modules/next/dist/server/load-components.js
+- /var/www/SekedarStore/node_modules/next/dist/build/utils.js
+- /var/www/SekedarStore/node_modules/next/dist/server/dev/static-paths-worker.js
+- /var/www/SekedarStore/node_modules/next/dist/compiled/jest-worker/processChild.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+    at /var/www/SekedarStore/node_modules/next/dist/server/require-hook.js:55:36
+    at Module._load (node:internal/modules/cjs/loader:1038:27)
+    at Module.require (node:internal/modules/cjs/loader:1289:19)
+    at mod.require (/var/www/SekedarStore/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:182:18)
+    at __webpack_require__.f.require (/var/www/SekedarStore/.next/server/webpack-runtime.js:198:28)
+    at /var/www/SekedarStore/.next/server/webpack-runtime.js:111:40
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (/var/www/SekedarStore/.next/server/webpack-runtime.js:110:67) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/var/www/SekedarStore/.next/server/webpack-runtime.js',
+    '/var/www/SekedarStore/.next/server/app/checkout/[sid]/page.js',
+    '/var/www/SekedarStore/node_modules/next/dist/server/require.js',
+    '/var/www/SekedarStore/node_modules/next/dist/server/load-components.js',
+    '/var/www/SekedarStore/node_modules/next/dist/build/utils.js',
+    '/var/www/SekedarStore/node_modules/next/dist/server/dev/static-paths-worker.js',
+    '/var/www/SekedarStore/node_modules/next/dist/compiled/jest-worker/processChild.js'
+  ],
+  page: '/checkout/2060'
+}
+ GET /checkout/2060 500 in 251ms
+ ⨯ Error: Cannot find module './vendor-chunks/@swc.js'
+Require stack:
+- /var/www/SekedarStore/.next/server/webpack-runtime.js
+- /var/www/SekedarStore/.next/server/app/checkout/[sid]/page.js
+- /var/www/SekedarStore/node_modules/next/dist/server/require.js
+- /var/www/SekedarStore/node_modules/next/dist/server/load-components.js
+- /var/www/SekedarStore/node_modules/next/dist/build/utils.js
+- /var/www/SekedarStore/node_modules/next/dist/server/dev/static-paths-worker.js
+- /var/www/SekedarStore/node_modules/next/dist/compiled/jest-worker/processChild.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+    at /var/www/SekedarStore/node_modules/next/dist/server/require-hook.js:55:36
+    at Module._load (node:internal/modules/cjs/loader:1038:27)
+    at Module.require (node:internal/modules/cjs/loader:1289:19)
+    at mod.require (/var/www/SekedarStore/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:182:18)
+    at __webpack_require__.f.require (/var/www/SekedarStore/.next/server/webpack-runtime.js:198:28)
+    at /var/www/SekedarStore/.next/server/webpack-runtime.js:111:40
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (/var/www/SekedarStore/.next/server/webpack-runtime.js:110:67) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/var/www/SekedarStore/.next/server/webpack-runtime.js',
+    '/var/www/SekedarStore/.next/server/app/checkout/[sid]/page.js',
+    '/var/www/SekedarStore/node_modules/next/dist/server/require.js',
+    '/var/www/SekedarStore/node_modules/next/dist/server/load-components.js',
+    '/var/www/SekedarStore/node_modules/next/dist/build/utils.js',
+    '/var/www/SekedarStore/node_modules/next/dist/server/dev/static-paths-worker.js',
+    '/var/www/SekedarStore/node_modules/next/dist/compiled/jest-worker/processChild.js'
+  ],
+  page: '/checkout/2060'
+}
+ GET /checkout/2060 500 in 254ms
+ ⨯ Error: Cannot find module './vendor-chunks/@swc.js'
+Require stack:
+- /var/www/SekedarStore/.next/server/webpack-runtime.js
+- /var/www/SekedarStore/.next/server/app/checkout/[sid]/page.js
+- /var/www/SekedarStore/node_modules/next/dist/server/require.js
+- /var/www/SekedarStore/node_modules/next/dist/server/load-components.js
+- /var/www/SekedarStore/node_modules/next/dist/build/utils.js
+- /var/www/SekedarStore/node_modules/next/dist/server/dev/static-paths-worker.js
+- /var/www/SekedarStore/node_modules/next/dist/compiled/jest-worker/processChild.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+    at /var/www/SekedarStore/node_modules/next/dist/server/require-hook.js:55:36
+    at Module._load (node:internal/modules/cjs/loader:1038:27)
+    at Module.require (node:internal/modules/cjs/loader:1289:19)
+    at mod.require (/var/www/SekedarStore/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:182:18)
+    at __webpack_require__.f.require (/var/www/SekedarStore/.next/server/webpack-runtime.js:198:28)
+    at /var/www/SekedarStore/.next/server/webpack-runtime.js:111:40
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (/var/www/SekedarStore/.next/server/webpack-runtime.js:110:67) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/var/www/SekedarStore/.next/server/webpack-runtime.js',
+    '/var/www/SekedarStore/.next/server/app/checkout/[sid]/page.js',
+    '/var/www/SekedarStore/node_modules/next/dist/server/require.js',
+    '/var/www/SekedarStore/node_modules/next/dist/server/load-components.js',
+    '/var/www/SekedarStore/node_modules/next/dist/build/utils.js',
+    '/var/www/SekedarStore/node_modules/next/dist/server/dev/static-paths-worker.js',
+    '/var/www/SekedarStore/node_modules/next/dist/compiled/jest-worker/processChild.js'
+  ],
+  page: '/checkout/2060'
+}
+ GET /checkout/2060 500 in 271ms
+ ⨯ Error: Cannot find module './vendor-chunks/@swc.js'
+Require stack:
+- /var/www/SekedarStore/.next/server/webpack-runtime.js
+- /var/www/SekedarStore/.next/server/app/checkout/[sid]/page.js
+- /var/www/SekedarStore/node_modules/next/dist/server/require.js
+- /var/www/SekedarStore/node_modules/next/dist/server/load-components.js
+- /var/www/SekedarStore/node_modules/next/dist/build/utils.js
+- /var/www/SekedarStore/node_modules/next/dist/server/dev/static-paths-worker.js
+- /var/www/SekedarStore/node_modules/next/dist/compiled/jest-worker/processChild.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+    at /var/www/SekedarStore/node_modules/next/dist/server/require-hook.js:55:36
+    at Module._load (node:internal/modules/cjs/loader:1038:27)
+    at Module.require (node:internal/modules/cjs/loader:1289:19)
+    at mod.require (/var/www/SekedarStore/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:182:18)
+    at __webpack_require__.f.require (/var/www/SekedarStore/.next/server/webpack-runtime.js:198:28)
+    at /var/www/SekedarStore/.next/server/webpack-runtime.js:111:40
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (/var/www/SekedarStore/.next/server/webpack-runtime.js:110:67) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/var/www/SekedarStore/.next/server/webpack-runtime.js',
+    '/var/www/SekedarStore/.next/server/app/checkout/[sid]/page.js',
+    '/var/www/SekedarStore/node_modules/next/dist/server/require.js',
+    '/var/www/SekedarStore/node_modules/next/dist/server/load-components.js',
+    '/var/www/SekedarStore/node_modules/next/dist/build/utils.js',
+    '/var/www/SekedarStore/node_modules/next/dist/server/dev/static-paths-worker.js',
+    '/var/www/SekedarStore/node_modules/next/dist/compiled/jest-worker/processChild.js'
+  ],
+  page: '/checkout/2060'
+}
+ GET /checkout/2060 500 in 281ms
+ ⨯ Error: Cannot find module './vendor-chunks/@swc.js'
+Require stack:
+- /var/www/SekedarStore/.next/server/webpack-runtime.js
+- /var/www/SekedarStore/.next/server/app/checkout/[sid]/page.js
+- /var/www/SekedarStore/node_modules/next/dist/server/require.js
+- /var/www/SekedarStore/node_modules/next/dist/server/load-components.js
+- /var/www/SekedarStore/node_modules/next/dist/build/utils.js
+- /var/www/SekedarStore/node_modules/next/dist/server/dev/static-paths-worker.js
+- /var/www/SekedarStore/node_modules/next/dist/compiled/jest-worker/processChild.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+    at /var/www/SekedarStore/node_modules/next/dist/server/require-hook.js:55:36
+    at Module._load (node:internal/modules/cjs/loader:1038:27)
+    at Module.require (node:internal/modules/cjs/loader:1289:19)
+    at mod.require (/var/www/SekedarStore/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:182:18)
+    at __webpack_require__.f.require (/var/www/SekedarStore/.next/server/webpack-runtime.js:198:28)
+    at /var/www/SekedarStore/.next/server/webpack-runtime.js:111:40
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (/var/www/SekedarStore/.next/server/webpack-runtime.js:110:67) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/var/www/SekedarStore/.next/server/webpack-runtime.js',
+    '/var/www/SekedarStore/.next/server/app/checkout/[sid]/page.js',
+    '/var/www/SekedarStore/node_modules/next/dist/server/require.js',
+    '/var/www/SekedarStore/node_modules/next/dist/server/load-components.js',
+    '/var/www/SekedarStore/node_modules/next/dist/build/utils.js',
+    '/var/www/SekedarStore/node_modules/next/dist/server/dev/static-paths-worker.js',
+    '/var/www/SekedarStore/node_modules/next/dist/compiled/jest-worker/processChild.js'
+  ],
+  page: '/checkout/2060'
+}
+ GET /checkout/2060 500 in 257ms
+ ⨯ Error: Cannot find module './vendor-chunks/@swc.js'
+Require stack:
+- /var/www/SekedarStore/.next/server/webpack-runtime.js
+- /var/www/SekedarStore/.next/server/app/checkout/[sid]/page.js
+- /var/www/SekedarStore/node_modules/next/dist/server/require.js
+- /var/www/SekedarStore/node_modules/next/dist/server/load-components.js
+- /var/www/SekedarStore/node_modules/next/dist/build/utils.js
+- /var/www/SekedarStore/node_modules/next/dist/server/dev/static-paths-worker.js
+- /var/www/SekedarStore/node_modules/next/dist/compiled/jest-worker/processChild.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+    at /var/www/SekedarStore/node_modules/next/dist/server/require-hook.js:55:36
+    at Module._load (node:internal/modules/cjs/loader:1038:27)
+    at Module.require (node:internal/modules/cjs/loader:1289:19)
+    at mod.require (/var/www/SekedarStore/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:182:18)
+    at __webpack_require__.f.require (/var/www/SekedarStore/.next/server/webpack-runtime.js:198:28)
+    at /var/www/SekedarStore/.next/server/webpack-runtime.js:111:40
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (/var/www/SekedarStore/.next/server/webpack-runtime.js:110:67) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/var/www/SekedarStore/.next/server/webpack-runtime.js',
+    '/var/www/SekedarStore/.next/server/app/checkout/[sid]/page.js',
+    '/var/www/SekedarStore/node_modules/next/dist/server/require.js',
+    '/var/www/SekedarStore/node_modules/next/dist/server/load-components.js',
+    '/var/www/SekedarStore/node_modules/next/dist/build/utils.js',
+    '/var/www/SekedarStore/node_modules/next/dist/server/dev/static-paths-worker.js',
+    '/var/www/SekedarStore/node_modules/next/dist/compiled/jest-worker/processChild.js'
+  ],
+  page: '/checkout/2060'
+}
+ GET /checkout/2060 500 in 251ms
+ ⨯ Error: Cannot find module './vendor-chunks/@swc.js'
+Require stack:
+- /var/www/SekedarStore/.next/server/webpack-runtime.js
+- /var/www/SekedarStore/.next/server/app/checkout/[sid]/page.js
+- /var/www/SekedarStore/node_modules/next/dist/server/require.js
+- /var/www/SekedarStore/node_modules/next/dist/server/load-components.js
+- /var/www/SekedarStore/node_modules/next/dist/build/utils.js
+- /var/www/SekedarStore/node_modules/next/dist/server/dev/static-paths-worker.js
+- /var/www/SekedarStore/node_modules/next/dist/compiled/jest-worker/processChild.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+    at /var/www/SekedarStore/node_modules/next/dist/server/require-hook.js:55:36
+    at Module._load (node:internal/modules/cjs/loader:1038:27)
+    at Module.require (node:internal/modules/cjs/loader:1289:19)
+    at mod.require (/var/www/SekedarStore/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:182:18)
+    at __webpack_require__.f.require (/var/www/SekedarStore/.next/server/webpack-runtime.js:198:28)
+    at /var/www/SekedarStore/.next/server/webpack-runtime.js:111:40
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (/var/www/SekedarStore/.next/server/webpack-runtime.js:110:67) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/var/www/SekedarStore/.next/server/webpack-runtime.js',
+    '/var/www/SekedarStore/.next/server/app/checkout/[sid]/page.js',
+    '/var/www/SekedarStore/node_modules/next/dist/server/require.js',
+    '/var/www/SekedarStore/node_modules/next/dist/server/load-components.js',
+    '/var/www/SekedarStore/node_modules/next/dist/build/utils.js',
+    '/var/www/SekedarStore/node_modules/next/dist/server/dev/static-paths-worker.js',
+    '/var/www/SekedarStore/node_modules/next/dist/compiled/jest-worker/processChild.js'
+  ],
+  page: '/checkout/2060'
+}
+ GET /checkout/2060 500 in 259ms
+ ⨯ Error: Cannot find module './vendor-chunks/@swc.js'
+Require stack:
+- /var/www/SekedarStore/.next/server/webpack-runtime.js
+- /var/www/SekedarStore/.next/server/app/checkout/[sid]/page.js
+- /var/www/SekedarStore/node_modules/next/dist/server/require.js
+- /var/www/SekedarStore/node_modules/next/dist/server/load-components.js
+- /var/www/SekedarStore/node_modules/next/dist/build/utils.js
+- /var/www/SekedarStore/node_modules/next/dist/server/dev/static-paths-worker.js
+- /var/www/SekedarStore/node_modules/next/dist/compiled/jest-worker/processChild.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+    at /var/www/SekedarStore/node_modules/next/dist/server/require-hook.js:55:36
+    at Module._load (node:internal/modules/cjs/loader:1038:27)
+    at Module.require (node:internal/modules/cjs/loader:1289:19)
+    at mod.require (/var/www/SekedarStore/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:182:18)
+    at __webpack_require__.f.require (/var/www/SekedarStore/.next/server/webpack-runtime.js:198:28)
+    at /var/www/SekedarStore/.next/server/webpack-runtime.js:111:40
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (/var/www/SekedarStore/.next/server/webpack-runtime.js:110:67) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/var/www/SekedarStore/.next/server/webpack-runtime.js',
+    '/var/www/SekedarStore/.next/server/app/checkout/[sid]/page.js',
+    '/var/www/SekedarStore/node_modules/next/dist/server/require.js',
+    '/var/www/SekedarStore/node_modules/next/dist/server/load-components.js',
+    '/var/www/SekedarStore/node_modules/next/dist/build/utils.js',
+    '/var/www/SekedarStore/node_modules/next/dist/server/dev/static-paths-worker.js',
+    '/var/www/SekedarStore/node_modules/next/dist/compiled/jest-worker/processChild.js'
+  ],
+  page: '/checkout/2060'
+}
+ GET /checkout/2060 500 in 254ms
+ GET / 200 in 74ms
+ GET /_next/static/css/app/layout.css?v=1766137216136 404 in 16ms
+ GET /_next/static/chunks/main-app.js?v=1766137216136 404 in 28ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 39ms
+ GET /_next/static/chunks/app/page.js 404 in 34ms
+ GET /_next/static/chunks/app/not-found.js 404 in 33ms
+ ⨯ Error: Cannot find module './vendor-chunks/@swc.js'
+Require stack:
+- /var/www/SekedarStore/.next/server/webpack-runtime.js
+- /var/www/SekedarStore/.next/server/app/checkout/[sid]/page.js
+- /var/www/SekedarStore/node_modules/next/dist/server/require.js
+- /var/www/SekedarStore/node_modules/next/dist/server/load-components.js
+- /var/www/SekedarStore/node_modules/next/dist/build/utils.js
+- /var/www/SekedarStore/node_modules/next/dist/server/dev/static-paths-worker.js
+- /var/www/SekedarStore/node_modules/next/dist/compiled/jest-worker/processChild.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+    at /var/www/SekedarStore/node_modules/next/dist/server/require-hook.js:55:36
+    at Module._load (node:internal/modules/cjs/loader:1038:27)
+    at Module.require (node:internal/modules/cjs/loader:1289:19)
+    at mod.require (/var/www/SekedarStore/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:182:18)
+    at __webpack_require__.f.require (/var/www/SekedarStore/.next/server/webpack-runtime.js:198:28)
+    at /var/www/SekedarStore/.next/server/webpack-runtime.js:111:40
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (/var/www/SekedarStore/.next/server/webpack-runtime.js:110:67) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/var/www/SekedarStore/.next/server/webpack-runtime.js',
+    '/var/www/SekedarStore/.next/server/app/checkout/[sid]/page.js',
+    '/var/www/SekedarStore/node_modules/next/dist/server/require.js',
+    '/var/www/SekedarStore/node_modules/next/dist/server/load-components.js',
+    '/var/www/SekedarStore/node_modules/next/dist/build/utils.js',
+    '/var/www/SekedarStore/node_modules/next/dist/server/dev/static-paths-worker.js',
+    '/var/www/SekedarStore/node_modules/next/dist/compiled/jest-worker/processChild.js'
+  ],
+  page: '/checkout/2060'
+}
+ GET /checkout/2060 500 in 260ms
+ ⨯ Error: Cannot find module './vendor-chunks/@swc.js'
+Require stack:
+- /var/www/SekedarStore/.next/server/webpack-runtime.js
+- /var/www/SekedarStore/.next/server/app/checkout/[sid]/page.js
+- /var/www/SekedarStore/node_modules/next/dist/server/require.js
+- /var/www/SekedarStore/node_modules/next/dist/server/load-components.js
+- /var/www/SekedarStore/node_modules/next/dist/build/utils.js
+- /var/www/SekedarStore/node_modules/next/dist/server/dev/static-paths-worker.js
+- /var/www/SekedarStore/node_modules/next/dist/compiled/jest-worker/processChild.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+    at /var/www/SekedarStore/node_modules/next/dist/server/require-hook.js:55:36
+    at Module._load (node:internal/modules/cjs/loader:1038:27)
+    at Module.require (node:internal/modules/cjs/loader:1289:19)
+    at mod.require (/var/www/SekedarStore/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:182:18)
+    at __webpack_require__.f.require (/var/www/SekedarStore/.next/server/webpack-runtime.js:198:28)
+    at /var/www/SekedarStore/.next/server/webpack-runtime.js:111:40
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (/var/www/SekedarStore/.next/server/webpack-runtime.js:110:67) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/var/www/SekedarStore/.next/server/webpack-runtime.js',
+    '/var/www/SekedarStore/.next/server/app/checkout/[sid]/page.js',
+    '/var/www/SekedarStore/node_modules/next/dist/server/require.js',
+    '/var/www/SekedarStore/node_modules/next/dist/server/load-components.js',
+    '/var/www/SekedarStore/node_modules/next/dist/build/utils.js',
+    '/var/www/SekedarStore/node_modules/next/dist/server/dev/static-paths-worker.js',
+    '/var/www/SekedarStore/node_modules/next/dist/compiled/jest-worker/processChild.js'
+  ],
+  page: '/checkout/2060'
+}
+ GET /checkout/2060 500 in 291ms
+ ⨯ Error: Cannot find module './vendor-chunks/@swc.js'
+Require stack:
+- /var/www/SekedarStore/.next/server/webpack-runtime.js
+- /var/www/SekedarStore/.next/server/app/checkout/[sid]/page.js
+- /var/www/SekedarStore/node_modules/next/dist/server/require.js
+- /var/www/SekedarStore/node_modules/next/dist/server/load-components.js
+- /var/www/SekedarStore/node_modules/next/dist/build/utils.js
+- /var/www/SekedarStore/node_modules/next/dist/server/dev/static-paths-worker.js
+- /var/www/SekedarStore/node_modules/next/dist/compiled/jest-worker/processChild.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+    at /var/www/SekedarStore/node_modules/next/dist/server/require-hook.js:55:36
+    at Module._load (node:internal/modules/cjs/loader:1038:27)
+    at Module.require (node:internal/modules/cjs/loader:1289:19)
+    at mod.require (/var/www/SekedarStore/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:182:18)
+    at __webpack_require__.f.require (/var/www/SekedarStore/.next/server/webpack-runtime.js:198:28)
+    at /var/www/SekedarStore/.next/server/webpack-runtime.js:111:40
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (/var/www/SekedarStore/.next/server/webpack-runtime.js:110:67) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/var/www/SekedarStore/.next/server/webpack-runtime.js',
+    '/var/www/SekedarStore/.next/server/app/checkout/[sid]/page.js',
+    '/var/www/SekedarStore/node_modules/next/dist/server/require.js',
+    '/var/www/SekedarStore/node_modules/next/dist/server/load-components.js',
+    '/var/www/SekedarStore/node_modules/next/dist/build/utils.js',
+    '/var/www/SekedarStore/node_modules/next/dist/server/dev/static-paths-worker.js',
+    '/var/www/SekedarStore/node_modules/next/dist/compiled/jest-worker/processChild.js'
+  ],
+  page: '/checkout/2060'
+}
+ GET /checkout/2060 500 in 259ms
+ ⨯ Error: Cannot find module './vendor-chunks/@swc.js'
+Require stack:
+- /var/www/SekedarStore/.next/server/webpack-runtime.js
+- /var/www/SekedarStore/.next/server/app/checkout/[sid]/page.js
+- /var/www/SekedarStore/node_modules/next/dist/server/require.js
+- /var/www/SekedarStore/node_modules/next/dist/server/load-components.js
+- /var/www/SekedarStore/node_modules/next/dist/build/utils.js
+- /var/www/SekedarStore/node_modules/next/dist/server/dev/static-paths-worker.js
+- /var/www/SekedarStore/node_modules/next/dist/compiled/jest-worker/processChild.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+    at /var/www/SekedarStore/node_modules/next/dist/server/require-hook.js:55:36
+    at Module._load (node:internal/modules/cjs/loader:1038:27)
+    at Module.require (node:internal/modules/cjs/loader:1289:19)
+    at mod.require (/var/www/SekedarStore/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:182:18)
+    at __webpack_require__.f.require (/var/www/SekedarStore/.next/server/webpack-runtime.js:198:28)
+    at /var/www/SekedarStore/.next/server/webpack-runtime.js:111:40
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (/var/www/SekedarStore/.next/server/webpack-runtime.js:110:67) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/var/www/SekedarStore/.next/server/webpack-runtime.js',
+    '/var/www/SekedarStore/.next/server/app/checkout/[sid]/page.js',
+    '/var/www/SekedarStore/node_modules/next/dist/server/require.js',
+    '/var/www/SekedarStore/node_modules/next/dist/server/load-components.js',
+    '/var/www/SekedarStore/node_modules/next/dist/build/utils.js',
+    '/var/www/SekedarStore/node_modules/next/dist/server/dev/static-paths-worker.js',
+    '/var/www/SekedarStore/node_modules/next/dist/compiled/jest-worker/processChild.js'
+  ],
+  page: '/checkout/2060'
+}
+ GET /checkout/2060 500 in 268ms
+ GET / 200 in 25ms
+ ⨯ Error: Cannot find module './vendor-chunks/@swc.js'
+Require stack:
+- /var/www/SekedarStore/.next/server/webpack-runtime.js
+- /var/www/SekedarStore/.next/server/app/checkout/[sid]/page.js
+- /var/www/SekedarStore/node_modules/next/dist/server/require.js
+- /var/www/SekedarStore/node_modules/next/dist/server/load-components.js
+- /var/www/SekedarStore/node_modules/next/dist/build/utils.js
+- /var/www/SekedarStore/node_modules/next/dist/server/dev/static-paths-worker.js
+- /var/www/SekedarStore/node_modules/next/dist/compiled/jest-worker/processChild.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+    at /var/www/SekedarStore/node_modules/next/dist/server/require-hook.js:55:36
+    at Module._load (node:internal/modules/cjs/loader:1038:27)
+    at Module.require (node:internal/modules/cjs/loader:1289:19)
+    at mod.require (/var/www/SekedarStore/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:182:18)
+    at __webpack_require__.f.require (/var/www/SekedarStore/.next/server/webpack-runtime.js:198:28)
+    at /var/www/SekedarStore/.next/server/webpack-runtime.js:111:40
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (/var/www/SekedarStore/.next/server/webpack-runtime.js:110:67) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/var/www/SekedarStore/.next/server/webpack-runtime.js',
+    '/var/www/SekedarStore/.next/server/app/checkout/[sid]/page.js',
+    '/var/www/SekedarStore/node_modules/next/dist/server/require.js',
+    '/var/www/SekedarStore/node_modules/next/dist/server/load-components.js',
+    '/var/www/SekedarStore/node_modules/next/dist/build/utils.js',
+    '/var/www/SekedarStore/node_modules/next/dist/server/dev/static-paths-worker.js',
+    '/var/www/SekedarStore/node_modules/next/dist/compiled/jest-worker/processChild.js'
+  ],
+  page: '/checkout/2060'
+}
+ GET /checkout/2060 500 in 253ms
+ GET /_next/static/css/app/layout.css?v=1766137222061 404 in 21ms
+ GET /_next/static/chunks/main-app.js?v=1766137222061 404 in 15ms
+ GET /_next/static/chunks/app/page.js 404 in 25ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 22ms
+ GET /_next/static/chunks/app/not-found.js 404 in 19ms
+ GET / 200 in 19ms
+ GET /_next/static/css/app/layout.css?v=1766137224012 404 in 21ms
+ GET /_next/static/chunks/app/not-found.js 404 in 36ms
+ GET /_next/static/chunks/app/page.js 404 in 33ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 36ms
+ GET /_next/static/chunks/main-app.js?v=1766137224012 404 in 25ms
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, lstat '/var/www/SekedarStore/.next/server/vendor-chunks/lucide-react.js'
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving './vendor-chunks/lucide-react' in /var/www/SekedarStore/.next/server for build dependencies doesn't lead to expected result '/var/www/SekedarStore/.next/server/vendor-chunks/lucide-react.js', but to 'Error: Can't resolve './vendor-chunks/lucide-react' in '/var/www/SekedarStore/.next/server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ./vendor-chunks/lucide-react (expected /var/www/SekedarStore/.next/server/vendor-chunks/lucide-react.js)
+<w>  at file dependencies /var/www/SekedarStore/.next/server/webpack-runtime.js
+<w>  at file /var/www/SekedarStore/.next/server/webpack-runtime.js
+<w>  at file dependencies /var/www/SekedarStore/.next/server/app/page.js
+<w>  at file /var/www/SekedarStore/.next/server/app/page.js
+<w>  at file dependencies /var/www/SekedarStore/node_modules/next/dist/server/require.js
+<w>  at file /var/www/SekedarStore/node_modules/next/dist/server/require.js
+<w>  at file dependencies /var/www/SekedarStore/node_modules/next/dist/server/load-components.js
+<w>  at file /var/www/SekedarStore/node_modules/next/dist/server/load-components.js
+<w>  at file dependencies /var/www/SekedarStore/node_modules/next/dist/build/utils.js
+<w>  at file /var/www/SekedarStore/node_modules/next/dist/build/utils.js
+<w>  at file dependencies /var/www/SekedarStore/node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js
+<w>  at file /var/www/SekedarStore/node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js
+<w>  at resolve commonjs /var/www/SekedarStore/node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving './vendor-chunks/motion-utils' in /var/www/SekedarStore/.next/server for build dependencies doesn't lead to expected result '/var/www/SekedarStore/.next/server/vendor-chunks/motion-utils.js', but to 'Error: Can't resolve './vendor-chunks/motion-utils' in '/var/www/SekedarStore/.next/server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ./vendor-chunks/motion-utils (expected /var/www/SekedarStore/.next/server/vendor-chunks/motion-utils.js)
+<w>  at file dependencies /var/www/SekedarStore/.next/server/webpack-runtime.js
+<w>  at file /var/www/SekedarStore/.next/server/webpack-runtime.js
+<w>  at file dependencies /var/www/SekedarStore/.next/server/app/page.js
+<w>  at file /var/www/SekedarStore/.next/server/app/page.js
+<w>  at file dependencies /var/www/SekedarStore/node_modules/next/dist/server/require.js
+<w>  at file /var/www/SekedarStore/node_modules/next/dist/server/require.js
+<w>  at file dependencies /var/www/SekedarStore/node_modules/next/dist/server/load-components.js
+<w>  at file /var/www/SekedarStore/node_modules/next/dist/server/load-components.js
+<w>  at file dependencies /var/www/SekedarStore/node_modules/next/dist/build/utils.js
+<w>  at file /var/www/SekedarStore/node_modules/next/dist/build/utils.js
+<w>  at file dependencies /var/www/SekedarStore/node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js
+<w>  at file /var/www/SekedarStore/node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js
+<w>  at resolve commonjs /var/www/SekedarStore/node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js
+ GET / 200 in 18ms
+ GET /_next/static/css/app/layout.css?v=1766137277844 404 in 17ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 33ms
+ GET /_next/static/chunks/app/page.js 404 in 42ms
+ GET /_next/static/chunks/app/not-found.js 404 in 36ms
+ GET /_next/static/chunks/main-app.js?v=1766137277844 404 in 31ms
+[?25h

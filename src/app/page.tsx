@@ -20,7 +20,15 @@ export type ServiceItem = {
   price: number;
 };
 
-const categories = ['All', 'IG', 'TikTok', 'YouTube', 'Followers', 'Likes', 'Views'];
+const categoryOptions = [
+  { id: 'All', label: 'Semua', icon: '🌟' },
+  { id: 'IG', label: 'Instagram', icon: '📷' },
+  { id: 'TikTok', label: 'TikTok', icon: '🎵' },
+  { id: 'YouTube', label: 'YouTube', icon: '📺' },
+  { id: 'Followers', label: 'Followers', icon: '👥' },
+  { id: 'Likes', label: 'Likes', icon: '❤️' },
+  { id: 'Views', label: 'Views', icon: '👀' }
+];
 
 const mockServices: ServiceItem[] = [
   { sid: 'ig-follow', name: 'Instagram Followers Real', category: 'IG Followers', min: 50, max: 10000, price: 25000 },
@@ -88,18 +96,33 @@ export default function HomePage() {
   }, [initialLoading]);
 
   const filtered = useMemo(() => {
+    if (!services.length) return [];
+    
+    const searchQuery = query.toLowerCase();
+    const tabQuery = activeTab.toLowerCase();
+    
     return services.filter((svc) => {
-      const searchQuery = query.toLowerCase();
-      const tabQuery = activeTab.toLowerCase();
+      // Search filter
+      const matchesQuery = !query || 
+        svc.name.toLowerCase().includes(searchQuery) || 
+        svc.category.toLowerCase().includes(searchQuery) ||
+        tabQuery.includes('instagram') && svc.category.toLowerCase().includes('ig') ||
+        tabQuery.includes('tiktok') && svc.category.toLowerCase().includes('tiktok') ||
+        tabQuery.includes('youtube') && svc.category.toLowerCase().includes('youtube') ||
+        tabQuery.includes('followers') && svc.name.toLowerCase().includes('followers') ||
+        tabQuery.includes('likes') && svc.name.toLowerCase().includes('likes') ||
+        tabQuery.includes('views') && svc.name.toLowerCase().includes('views');
       
-      const matchesQuery = !query || svc.name.toLowerCase().includes(searchQuery) || svc.category.toLowerCase().includes(searchQuery);
-      
+      // Tab filter
       const matchesTab = activeTab === 'All' || 
         svc.category.toLowerCase().includes(tabQuery) ||
         svc.name.toLowerCase().includes(tabQuery) ||
         (tabQuery.includes('instagram') && svc.category.toLowerCase().includes('ig')) ||
         (tabQuery.includes('tiktok') && svc.category.toLowerCase().includes('tiktok')) ||
-        (tabQuery.includes('youtube') && svc.category.toLowerCase().includes('youtube'));
+        (tabQuery.includes('youtube') && svc.category.toLowerCase().includes('youtube')) ||
+        (tabQuery.includes('followers') && svc.name.toLowerCase().includes('followers')) ||
+        (tabQuery.includes('likes') && svc.name.toLowerCase().includes('likes')) ||
+        (tabQuery.includes('views') && svc.name.toLowerCase().includes('views'));
       
       return matchesTab && matchesQuery;
     });
@@ -191,13 +214,13 @@ export default function HomePage() {
           />
         </div>
         <div className="mb-3 flex flex-wrap gap-2">
-          {categories.map((cat) => (
+          {categoryOptions.map((cat) => (
             <button
-              key={cat}
-              onClick={() => setActiveTab(cat)}
-              className={`rounded-full px-3 py-1 text-xs font-semibold ${activeTab === cat ? 'bg-accent text-white' : 'bg-slate-100 text-slate-600'}`}
+              key={cat.id}
+              onClick={() => setActiveTab(cat.id)}
+              className={`rounded-full px-3 py-1 text-xs font-semibold ${activeTab === cat.id ? 'bg-accent text-white' : 'bg-slate-100 text-slate-600'}`}
             >
-              {cat}
+              {cat.icon} {cat.label}
             </button>
           ))}
         </div>

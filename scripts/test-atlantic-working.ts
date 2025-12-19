@@ -1,4 +1,3 @@
-import { createDeposit, checkDepositStatus } from '../src/lib/atlantic';
 import qs from 'querystring';
 
 async function main() {
