@@ -1,58 +1,71 @@
-import qs from 'querystring';
+const BASE_URL = "https://atlantich2h.com";
 
-const ATLANTIC_BASE = 'https://atlantich2h.com';
-
-function getApiKey() {
-  const key = process.env.ATLANTIC_API_KEY;
-  if (!key) throw new Error('ATLANTIC_API_KEY missing');
-  return key;
+function toForm(data: Record<string, any>) {
+  return new URLSearchParams(
+    Object.entries(data).reduce((acc, [k, v]) => {
+      acc[k] = String(v);
+      return acc;
+    }, {} as Record<string, string>)
+  ).toString();
 }
 
-export type AtlanticDepositResponse = {
-  status: string;
-  data?: {
-    depositId?: string;
-    qr_image?: string;
-    expired_at?: string;
-    fee?: number;
-  };
-  message?: string;
-};
-
-export async function createDeposit(amount: number, ref: string): Promise<AtlanticDepositResponse> {
-  const body = qs.stringify({
-    key: getApiKey(),
-    amount,
-    reff_id: ref,
-  });
-
-  const res = await fetch(`${ATLANTIC_BASE}/deposit/create`, {
-    method: 'POST',
+export async function createDepositQRIS(reffId: string, nominal: number) {
+  const res = await fetch(`${BASE_URL}/deposit/create`, {
+    method: "POST",
     headers: {
-      'Content-Type': 'application/x-www-form-urlencoded',
+      "Content-Type": "application/x-www-form-urlencoded",
     },
-    body,
+    body: toForm({
+      api_key: process.env.ATLANTIC_API_KEY,
+      reff_id: reffId,
+      nominal,
+      type: "ewallet",
+      method: "qris",
+    }),
   });
+
+  if (!res.ok) {
+    throw new Error("Gagal create deposit Atlantic");
+  }
 
   return res.json();
 }
 
 export async function checkDepositStatus(depositId: string) {
-  const body = qs.stringify({ key: getApiKey(), deposit_id: depositId });
-  const res = await fetch(`${ATLANTIC_BASE}/deposit/status`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body,
+  const res = await fetch(`${BASE_URL}/deposit/status`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
+    body: toForm({
+      api_key: process.env.ATLANTIC_API_KEY,
+      id: depositId,
+    }),
   });
+
+  if (!res.ok) {
+    throw new Error("Gagal cek status deposit");
+  }
+
   return res.json();
 }
 
-export async function triggerInstant(depositId: string) {
-  const body = qs.stringify({ key: getApiKey(), deposit_id: depositId, action: 'true' });
-  const res = await fetch(`${ATLANTIC_BASE}/deposit/instant`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body,
+export async function triggerInstantDeposit(depositId: string) {
+  const res = await fetch(`${BASE_URL}/deposit/instant`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
+    body: toForm({
+      api_key: process.env.ATLANTIC_API_KEY,
+      id: depositId,
+      action: true,
+    }),
   });
+
+  if (!res.ok) {
+    throw new Error("Gagal instant deposit");
+  }
+
   return res.json();
 }
