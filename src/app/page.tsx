@@ -43,7 +43,7 @@ export default function HomePage() {
   const [loading, setLoading] = useState(false);
   const [query, setQuery] = useState('');
   const [activeTab, setActiveTab] = useState('All');
-  const [services, setServices] = useState<ServiceItem[]>(mockServices);
+  const [services, setServices] = useState<ServiceItem[]>([]);
 
   useEffect(() => {
     // onboarding flow enforcement on client
@@ -57,8 +57,23 @@ export default function HomePage() {
   }, []);
 
   useEffect(() => {
-    setLoading(true);
-    setTimeout(() => setLoading(false), 600);
+    const loadServices = async () => {
+      setLoading(true);
+      try {
+        const res = await fetch('/api/services');
+        const data = await res.json();
+        if (data.services) {
+          setServices(data.services);
+        }
+      } catch (err) {
+        console.error('Failed to load services:', err);
+        setServices(mockServices); // Fallback to mock
+      } finally {
+        setLoading(false);
+      }
+    };
+    
+    loadServices();
   }, []);
 
   const filtered = useMemo(() => {
@@ -117,7 +132,7 @@ export default function HomePage() {
             <Sparkles size={16} /> Top layanan
           </div>
           <div className="space-y-3">
-            {mockServices.slice(0, 5).map((svc) => (
+            {services.slice(0, 5).map((svc) => (
               <div key={svc.sid} className="flex items-center gap-3 rounded-2xl bg-slate-50 p-3">
                 <div className="h-10 w-10 overflow-hidden rounded-full bg-white shadow-soft">
                   <Image src={categoryIcon(svc.category)} alt={svc.category} width={40} height={40} />

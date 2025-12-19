@@ -5,16 +5,11 @@ import { useParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { CatLottie } from '@/ui/components/CatLottie';
 
-const mockServices = [
-  { sid: 'ig-follow', name: 'Instagram Followers Real', category: 'IG Followers', min: 50, max: 10000, price: 25000 },
-  { sid: 'ig-like', name: 'IG Likes Cepat', category: 'IG Likes', min: 50, max: 5000, price: 12000 },
-  { sid: 'tt-view', name: 'TikTok Views Boost', category: 'TikTok Views', min: 100, max: 20000, price: 18000 },
-];
-
 export default function CheckoutPage() {
   const { sid } = useParams<{ sid: string }>();
   const router = useRouter();
-  const service = useMemo(() => mockServices.find((s) => s.sid === sid), [sid]);
+  const [service, setService] = useState<any>(null);
+  const [serviceLoading, setServiceLoading] = useState(true);
   const [target, setTarget] = useState('');
   const [qty, setQty] = useState('');
   const [wa, setWa] = useState('');
@@ -22,9 +17,26 @@ export default function CheckoutPage() {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    const loadService = async () => {
+      try {
+        const res = await fetch('/api/services');
+        const data = await res.json();
+        if (data.services) {
+          const found = data.services.find((s: any) => s.sid === sid);
+          setService(found || null);
+        }
+      } catch (err) {
+        console.error('Failed to load service:', err);
+      } finally {
+        setServiceLoading(false);
+      }
+    };
+
+    loadService();
+    
     document.body.classList.add('no-scroll');
     return () => document.body.classList.remove('no-scroll');
-  }, []);
+  }, [sid]);
 
   useEffect(() => {
     const stored = localStorage.getItem('skd_wa');
@@ -32,7 +44,16 @@ export default function CheckoutPage() {
   }, []);
 
   const validate = () => {
-    if (!service) {
+if (serviceLoading) {
+    return (
+      <div className="flex h-screen flex-col items-center justify-center bg-slate-50 px-6 text-center">
+        <CatLottie variant="loading" size="lg" />
+        <p className="text-lg font-semibold">Memuat layanan...</p>
+      </div>
+    );
+  }
+
+  if (!service) {
       setError('Layanan tidak ditemukan');
       return false;
     }

@@ -1,0 +1,13 @@
+
+> sekedar-store@0.1.0 dev
+> next dev
+
+  ▲ Next.js 14.2.5
+  - Local:        http://localhost:3000
+  - Environments: .env.local, .env
+
+ ✓ Starting...
+ ✓ Ready in 1652ms
+ ○ Compiling /api/services ...
+ ✓ Compiled /api/services in 719ms (103 modules)
+ GET /api/services 200 in 1360ms
