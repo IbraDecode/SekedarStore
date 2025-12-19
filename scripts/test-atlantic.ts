@@ -25,8 +25,10 @@ async function main() {
 
     console.log('\nDeposit Data:', depositData);
     
-    const depositRes = await fetch('https://atlantich2h.com/deposit/create', depositData, {
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+    const depositRes = await fetch('https://atlantich2h.com/deposit/create', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: depositData
     });
 
     const dataRes = await depositRes.json();
@@ -51,8 +53,10 @@ async function main() {
 
     console.log('Check Data:', checkData);
     
-    const checkRes = await fetch('https://atlantich2h.com/deposit/status', checkData, {
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+    const checkRes = await fetch('https://atlantich2h.com/deposit/status', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: checkData
     });
 
     const statusData = await checkRes.json();

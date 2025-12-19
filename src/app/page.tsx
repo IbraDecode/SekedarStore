@@ -5,7 +5,7 @@ import { BottomSheet } from '@/ui/components/BottomSheet';
 import { CatLottie } from '@/ui/components/CatLottie';
 import { ServiceSkeletonRow } from '@/ui/components/ServiceSkeletonRow';
 import Image from 'next/image';
-import { Search, Sparkles } from 'lucide-react';
+import { Search, Sparkles, Grid, Users, Heart, Eye, Globe, Instagram, Music, Video, Check } from 'lucide-react';
 import Link from 'next/link';
 import igIcon from '@/ui/assets/instagram.svg';
 import ttIcon from '@/ui/assets/tiktok.svg';
@@ -21,13 +21,13 @@ export type ServiceItem = {
 };
 
 const categoryOptions = [
-  { id: 'All', label: 'Semua', icon: '🌟' },
-  { id: 'IG', label: 'Instagram', icon: '📷' },
-  { id: 'TikTok', label: 'TikTok', icon: '🎵' },
-  { id: 'YouTube', label: 'YouTube', icon: '📺' },
-  { id: 'Followers', label: 'Followers', icon: '👥' },
-  { id: 'Likes', label: 'Likes', icon: '❤️' },
-  { id: 'Views', label: 'Views', icon: '👀' }
+  { id: 'All', label: 'Semua', icon: <Grid className="w-4 h-4" /> },
+  { id: 'IG', label: 'Instagram', icon: <Instagram className="w-4 h-4" /> },
+  { id: 'TikTok', label: 'TikTok', icon: <Music className="w-4 h-4" /> },
+  { id: 'YouTube', label: 'YouTube', icon: <Video className="w-4 h-4" /> },
+  { id: 'Followers', label: 'Followers', icon: <Users className="w-4 h-4" /> },
+  { id: 'Likes', label: 'Likes', icon: <Heart className="w-4 h-4" /> },
+  { id: 'Views', label: 'Views', icon: <Eye className="w-4 h-4" /> }
 ];
 
 const mockServices: ServiceItem[] = [
@@ -218,9 +218,10 @@ export default function HomePage() {
             <button
               key={cat.id}
               onClick={() => setActiveTab(cat.id)}
-              className={`rounded-full px-3 py-1 text-xs font-semibold ${activeTab === cat.id ? 'bg-accent text-white' : 'bg-slate-100 text-slate-600'}`}
+              className={`rounded-full px-3 py-1 text-xs font-semibold flex items-center gap-1 ${activeTab === cat.id ? 'bg-accent text-white' : 'bg-slate-100 text-slate-600'}`}
             >
-              {cat.icon} {cat.label}
+              {cat.icon}
+              {cat.label}
             </button>
           ))}
         </div>

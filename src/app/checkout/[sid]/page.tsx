@@ -3,7 +3,11 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import { CatLottie } from '@/ui/components/CatLottie';
+import igIcon from '@/ui/assets/instagram.svg';
+import ttIcon from '@/ui/assets/tiktok.svg';
+import ytIcon from '@/ui/assets/youtube.svg';
 
 export default function CheckoutPage() {
   const { sid } = useParams<{ sid: string }>();
