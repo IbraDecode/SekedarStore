@@ -1,6 +1,6 @@
 import qs from "querystring";
 
-const ATLANTIC_BASE = "https://atlantich2h.com";
+const ATLANTIC_BASE = "https://atlantich2h.com/api";
 
 function getApiKey() {
   const key = process.env.ATLANTIC_API_KEY;
