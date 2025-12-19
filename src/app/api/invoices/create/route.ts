@@ -2,14 +2,7 @@ import { NextResponse } from "next/server";
 import { firestore } from "@/lib/firebase-admin";
 import { createDeposit } from "@/lib/atlantic";
 import { sendWhatsApp } from "@/lib/fonnte";
-
-function calcTotals(basePrice: number, markupType: string, markupValue: number, qty: number) {
-  const base = (qty / 1000) * basePrice;
-  let sell = base;
-  if (markupType === "percent") sell += (markupValue / 100) * base;
-  else sell += markupValue;
-  return { base_total: Math.ceil(base), sell_total: Math.ceil(sell) };
-}
+import { calculateTotals } from "@/lib/pricing";
 
 export async function POST(req: Request) {
   try {
@@ -28,10 +21,12 @@ export async function POST(req: Request) {
       return NextResponse.json({ message: "Jumlah di luar batas" }, { status: 400 });
     }
 
-    const { base_total, sell_total } = calcTotals(
+    const markupType = "percent";
+    const markupValue = 20;
+    const { base_total, sell_total } = calculateTotals(
       Number(svc.base_price_per_1000 || 0),
-      String(svc.markup_type || "percent"),
-      Number(svc.markup_value || 0),
+      markupType,
+      markupValue,
       Number(qty)
     );
 

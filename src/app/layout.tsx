@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import { LottiePreload } from '@/ui/components/LottiePreload';
 
 export const metadata: Metadata = {
   title: 'Sekedar Store',
@@ -14,7 +15,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="theme-color" content="#3B82F6" />
         <link rel="icon" href="/favicon.ico" />
       </head>
-      <body className="min-h-screen bg-slate-50 antialiased">{children}</body>
+      <body className="min-h-screen bg-slate-50 antialiased">
+        <LottiePreload />
+        {children}
+      </body>
     </html>
   );
 }

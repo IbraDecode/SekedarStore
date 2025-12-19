@@ -21,7 +21,7 @@ Siapkan `.env.local` berdasarkan `.env.example` sebelum menjalankan karena key w
 
 ## Struktur
 
-- `src/app` – route onboarding, cara-pakai, home, checkout, invoice, dan API.
+- `src/app` – route onboarding, home (intent → pilih layanan), checkout, invoice, dan API.
 - `src/ui/components` – CatLottie, BottomSheet, skeleton shimmer.
 - `src/lib` – helper integrasi Firestore, Atlantic, Zaynflazz, Fonnte.
 - `scripts` – test harness integrasi.

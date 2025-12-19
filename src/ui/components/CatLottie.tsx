@@ -3,7 +3,7 @@
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import clsx from 'clsx';
 
-const variantMap = {
+export const variantMap = {
   intro: 'https://lottie.host/92c71487-72d1-440e-91a7-5135d0c96737/bSEfm70ckN.lottie',
   loading: 'https://lottie.host/2cb233f0-da41-41c8-b6e6-df8f6d2cb030/1MiJmNnYIO.lottie',
   welcome: 'https://lottie.host/425037ba-b402-426e-aa3f-ccc95db5fb55/IJF6xCT4AL.lottie',
@@ -14,7 +14,7 @@ const variantMap = {
   successCheck: 'https://lottie.host/2b5a924f-8beb-4bd3-83ff-81eca4ad0744/BFCl0vEiRp.lottie',
 };
 
-type Variant = keyof typeof variantMap;
+export type Variant = keyof typeof variantMap;
 
 type Size = 'sm' | 'md' | 'lg' | number;
 

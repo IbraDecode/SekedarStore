@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
 import Image from 'next/image';
 import { CatLottie } from '@/ui/components/CatLottie';
+import { Info } from 'lucide-react';
 
 export type InvoiceStatus = 'UNPAID' | 'PENDING' | 'PROCESSING' | 'PAID' | 'FAILED' | 'EXPIRED';
 
@@ -20,10 +21,13 @@ export default function InvoicePage() {
   const { code } = useParams<{ code: string }>();
   const [invoice, setInvoice] = useState<Invoice | null>(null);
   const [loading, setLoading] = useState(true);
+  const [syncing, setSyncing] = useState(false);
   const [error, setError] = useState('');
+  const [remaining, setRemaining] = useState<string | null>(null);
 
-  const load = async () => {
-    setLoading(true);
+  const load = async (showSpinner = true) => {
+    if (showSpinner) setLoading(true);
+    else setSyncing(true);
     try {
       const res = await fetch(`/api/invoices/${code}`);
       const data = await res.json();
@@ -33,21 +37,53 @@ export default function InvoicePage() {
     } catch (err: any) {
       setError(err.message || 'Ada kendala. Coba periksa lagi.');
     } finally {
-      setLoading(false);
+      if (showSpinner) setLoading(false);
+      else setSyncing(false);
     }
   };
 
-  const sync = async () => {
-    setLoading(true);
-    await fetch(`/api/invoices/${code}/sync`, { method: 'POST' });
-    await load();
+  const sync = async (showSpinner = false) => {
+    if (showSpinner) setSyncing(true);
+    try {
+      await fetch(`/api/invoices/${code}/sync`, { method: 'POST' });
+      await load(false);
+    } finally {
+      if (showSpinner) setSyncing(false);
+    }
   };
 
   useEffect(() => {
     document.body.classList.add('no-scroll');
-    load();
+    load(true);
     return () => document.body.classList.remove('no-scroll');
   }, []);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      sync(false);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
+  useEffect(() => {
+    if (!invoice?.expired_at) {
+      setRemaining(null);
+      return;
+    }
+    const updateRemaining = () => {
+      const diff = new Date(invoice.expired_at).getTime() - Date.now();
+      if (diff <= 0) {
+        setRemaining('Kedaluwarsa');
+        return;
+      }
+      const minutes = Math.floor(diff / 60000);
+      const seconds = Math.floor((diff % 60000) / 1000);
+      setRemaining(`${minutes}m ${seconds}s`);
+    };
+    updateRemaining();
+    const interval = setInterval(updateRemaining, 1000);
+    return () => clearInterval(interval);
+  }, [invoice?.expired_at]);
 
   const isSuccess = invoice?.payment_status === 'PAID';
   const isError = invoice && ['FAILED', 'EXPIRED'].includes(invoice.payment_status);
@@ -60,6 +96,11 @@ export default function InvoicePage() {
         <div className="flex w-full max-w-md flex-col gap-4">
           <div className="text-2xl font-semibold">Invoice #{invoice.code}</div>
           <div className="text-sm text-slate-500">Status pembayaran: {invoice.payment_status}</div>
+          {remaining && invoice.payment_status === 'PENDING' && (
+            <div className="text-xs text-amber-700 rounded-full bg-amber-50 px-3 py-1 inline-flex items-center gap-2 mx-auto">
+              <Info size={12} /> Selesaikan sebelum {remaining}
+            </div>
+          )}
 
           {!isSuccess && !isError && invoice.qr_image && (
             <div className="mx-auto rounded-3xl bg-white p-4 shadow-soft">
@@ -88,13 +129,16 @@ export default function InvoicePage() {
             </div>
             {invoice.expired_at && <div className="text-xs text-slate-400">Kedaluwarsa: {invoice.expired_at}</div>}
           </div>
+          <div className="rounded-2xl bg-slate-900 px-3 py-2 text-xs text-white">
+            Simpan link ini buat cek status order kamu. Sistem cek otomatis tanpa perlu chat admin.
+          </div>
 
           {error && (
             <div className="rounded-2xl bg-white px-3 py-2 text-sm text-red-600">{error}</div>
           )}
 
-          <button className="button-primary" onClick={sync}>
-            Refresh Status
+          <button className="button-primary" onClick={() => sync(true)} disabled={syncing}>
+            {syncing ? 'Menyegarkan...' : 'Refresh Status'}
           </button>
         </div>
       )}
