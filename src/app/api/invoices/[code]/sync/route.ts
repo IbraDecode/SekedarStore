@@ -4,7 +4,7 @@ import { checkDepositStatus, triggerInstant } from "@/lib/atlantic";
 import { createOrder, checkStatus as checkZaynStatus } from "@/lib/zaynflazz";
 import { sendWhatsApp } from "@/lib/fonnte";
 
-function normalizeStatus(s: string) {
+function normalizeStatus(s: string | undefined) {
   return String(s || "").toLowerCase();
 }
 

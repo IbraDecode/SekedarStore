@@ -9,11 +9,11 @@ async function main() {
     if (!sample) return;
     const deposit = await createDeposit(1000, `FLOW${Date.now()}`);
     console.log('Deposit', deposit);
-    if (deposit?.data?.depositId) {
-      const status = await checkDepositStatus(deposit.data.depositId);
+    if (deposit?.data?.id) {
+      const status = await checkDepositStatus(deposit.data.id);
       console.log('Deposit status', status);
     }
-    const order = await createOrder({ service: sample.id, target: 'test', quantity: Number(sample.min) || 10 });
+    const order = await createOrder({ layanan: sample.id, target: 'test', jumlah: Number(sample.min) || 10 });
     console.log('Order', order);
   } catch (err) {
     console.error('Error', err);
