@@ -40,12 +40,18 @@ const categoryIcon = (category: string) => {
 
 export default function HomePage() {
   const [sheetOpen, setSheetOpen] = useState(false);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true); // Start with true for initial loading
+  const [initialLoading, setInitialLoading] = useState(true); // Initial app loading
   const [query, setQuery] = useState('');
   const [activeTab, setActiveTab] = useState('All');
   const [services, setServices] = useState<ServiceItem[]>([]);
 
   useEffect(() => {
+    // Initial loading check
+    const timer = setTimeout(() => {
+      setInitialLoading(false);
+    }, 2000); // Show initial loading for 2 seconds
+
     // onboarding flow enforcement on client
     const onboarded = typeof window !== 'undefined' && localStorage.getItem('skd_onboarded');
     const help = typeof window !== 'undefined' && localStorage.getItem('skd_help_seen');
@@ -54,9 +60,14 @@ export default function HomePage() {
     } else if (!help) {
       window.location.href = '/cara-pakai';
     }
+
+    return () => clearTimeout(timer);
   }, []);
 
   useEffect(() => {
+    // Skip service loading if initial loading
+    if (initialLoading) return;
+
     const loadServices = async () => {
       setLoading(true);
       try {
@@ -74,16 +85,35 @@ export default function HomePage() {
     };
     
     loadServices();
-  }, []);
+  }, [initialLoading]);
 
   const filtered = useMemo(() => {
     return services.filter((svc) => {
-      const matchesTab =
-        activeTab === 'All' || svc.category.toLowerCase().includes(activeTab.toLowerCase()) || svc.name.toLowerCase().includes(activeTab.toLowerCase());
-      const matchesQuery = svc.name.toLowerCase().includes(query.toLowerCase());
+      const searchQuery = query.toLowerCase();
+      const tabQuery = activeTab.toLowerCase();
+      
+      const matchesQuery = !query || svc.name.toLowerCase().includes(searchQuery) || svc.category.toLowerCase().includes(searchQuery);
+      
+      const matchesTab = activeTab === 'All' || 
+        svc.category.toLowerCase().includes(tabQuery) ||
+        svc.name.toLowerCase().includes(tabQuery) ||
+        (tabQuery.includes('instagram') && svc.category.toLowerCase().includes('ig')) ||
+        (tabQuery.includes('tiktok') && svc.category.toLowerCase().includes('tiktok')) ||
+        (tabQuery.includes('youtube') && svc.category.toLowerCase().includes('youtube'));
+      
       return matchesTab && matchesQuery;
     });
   }, [services, query, activeTab]);
+
+  // Initial loading overlay
+  if (initialLoading) {
+    return (
+      <div className="flex h-screen flex-col items-center justify-center bg-slate-50">
+        <CatLottie variant="loading" size="lg" />
+        <p className="mt-4 text-lg font-semibold text-slate-700">Memuat layanan...</p>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen overflow-hidden bg-slate-50">
