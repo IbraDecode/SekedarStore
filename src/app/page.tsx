@@ -5,7 +5,7 @@ import { BottomSheet } from '@/ui/components/BottomSheet';
 import { CatLottie } from '@/ui/components/CatLottie';
 import { ServiceSkeletonRow } from '@/ui/components/ServiceSkeletonRow';
 import Image from 'next/image';
-import { Search, Sparkles, Grid, Users, Heart, Eye, Globe, Instagram, Music, Video, Check } from 'lucide-react';
+import { Search, Sparkles } from 'lucide-react';
 import Link from 'next/link';
 import igIcon from '@/ui/assets/instagram.svg';
 import ttIcon from '@/ui/assets/tiktok.svg';
@@ -21,21 +21,38 @@ export type ServiceItem = {
 };
 
 const categoryOptions = [
-  { id: 'All', label: 'Semua', icon: <Grid className="w-4 h-4" /> },
-  { id: 'IG', label: 'Instagram', icon: <Instagram className="w-4 h-4" /> },
-  { id: 'TikTok', label: 'TikTok', icon: <Music className="w-4 h-4" /> },
-  { id: 'YouTube', label: 'YouTube', icon: <Video className="w-4 h-4" /> },
-  { id: 'Followers', label: 'Followers', icon: <Users className="w-4 h-4" /> },
-  { id: 'Likes', label: 'Likes', icon: <Heart className="w-4 h-4" /> },
-  { id: 'Views', label: 'Views', icon: <Eye className="w-4 h-4" /> }
+  { id: 'All', label: 'Semua', icon: '🌟' },
+  { id: 'IG', label: 'Instagram', icon: 'IG' },
+  { id: 'TikTok', label: 'TikTok', icon: 'TT' },
+  { id: 'YouTube', label: 'YouTube', icon: 'YT' },
+  { id: 'Followers', label: 'Followers', icon: '👥' },
+  { id: 'Likes', label: 'Likes', icon: '❤️' },
+  { id: 'Views', label: 'Views', icon: '👀' }
 ];
 
 const mockServices: ServiceItem[] = [
-  { sid: 'ig-follow', name: 'Instagram Followers Real', category: 'IG Followers', min: 50, max: 10000, price: 25000 },
+{ sid: 'ig-follow', name: 'Instagram Followers Real', category: 'IG Followers', min: 50, max: 10000, price: 25000 },
   { sid: 'ig-like', name: 'IG Likes Cepat', category: 'IG Likes', min: 50, max: 5000, price: 12000 },
   { sid: 'tt-view', name: 'TikTok Views Boost', category: 'TikTok Views', min: 100, max: 20000, price: 18000 },
   { sid: 'yt-sub', name: 'YouTube Subscribers', category: 'YouTube Followers', min: 10, max: 2000, price: 90000 },
   { sid: 'tt-like', name: 'TikTok Likes', category: 'TikTok Likes', min: 100, max: 15000, price: 15000 },
+  { sid: '2460', name: 'YouTube Short Likes NonDrop Max 20K', category: 'YouTube Shorts Views | Likes', min: 12, max: 50000, price: 18738 },
+  { sid: '2060', name: 'Shopee Followers Indonesia', category: 'Shopee Followers Indonesia', min: 120, max: 25000, price: 27087 },
+  { sid: '2061', name: 'Shopee Followers Indonesia MAX 30K', category: 'Shopee Followers Indonesia', min: 120, max: 36000, price: 43200 },
+  { sid: '2062', name: 'Shopee Followers Indonesia MAX 50K', category: 'Shopee Followers Indonesia', min: 60, max: 50000, price: 21384 },
+  { sid: '2067', name: 'Shopee Video Likes', category: 'Shopee Video Views/Likes/Favorite/Shares', min: 12, max: 40000, price: 9980 },
+  { sid: '2084', name: 'Tokopedia Feed Video Views', category: 'Tokopedia Feed', min: 120, max: 1000000, price: 12962 },
+  { sid: '2087', name: 'Tiktok Comment Likes', category: 'Tiktok Comments', min: 12, max: 100000, price: 7128 },
+  { sid: '2088', name: 'Tiktok Emoji Comments', category: 'Tiktok Comments', min: 12, max: 100000, price: 18533 },
+  { sid: '2091', name: 'Snack Video Likes', category: 'Snack Video Likes', min: 60, max: 50000, price: 9945 },
+  { sid: '2092', name: 'Snack Video Likes Real Instan Max10K', category: 'Snack Video Likes', min: 60, max: 10000, price: 11994 },
+  { sid: '2093', name: 'Snack Video Views FAST INSTAN MAX 1M', category: 'Snack Video Views', min: 60000, max: 1000000, price: 13527 },
+  { sid: '2094', name: 'Shopee Live Stream Views Max 50K', category: 'Shopee Live Stream View S3', min: 12, max: 100000, price: 68429 },
+  { sid: '4187', name: 'Tiktok Likes', category: 'Tiktok Combined [ Video Services ]', min: 12, max: 500000, price: 5702 },
+  { sid: '4289', name: 'TikTok 3x Views + Shares + Downloads + Saves', category: 'Tiktok Combined [ Video Services ]', min: 120, max: 2147483647, price: 3564 },
+  { sid: '667', label: 'TikTok Followers', category: 'Tiktok Followers | New Update | 15/04/2025', min: 12, max: 10000000, price: 16252 },
+  { sid: '2115', name: 'Instagram Likes Max 1M', category: 'Instagram Likes | New Update | 15/04/2025', min: 12, max: 1000000, price: 4039 },
+  { sid: '2116', name: 'Instagram Likes Max 50M', category: 'Instagram Likes | New Update | 15/04/2025', min: 12, max: 50000000, price: 4281 }
 ];
 
 const categoryIcon = (category: string) => {
@@ -218,9 +235,9 @@ export default function HomePage() {
             <button
               key={cat.id}
               onClick={() => setActiveTab(cat.id)}
-              className={`rounded-full px-3 py-1 text-xs font-semibold flex items-center gap-1 ${activeTab === cat.id ? 'bg-accent text-white' : 'bg-slate-100 text-slate-600'}`}
+              className={`rounded-full px-3 py-1 text-xs font-semibold flex items-center gap-2 ${activeTab === cat.id ? 'bg-accent text-white' : 'bg-slate-100 text-slate-600'}`}
             >
-              {cat.icon}
+              <span className="text-sm">{cat.icon}</span>
               {cat.label}
             </button>
           ))}
