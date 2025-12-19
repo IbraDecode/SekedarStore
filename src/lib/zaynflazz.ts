@@ -70,3 +70,5 @@ export async function checkOrderStatus(orderId: string) {
   if (!res.ok) {
     throw new Error("Gagal cek status order Zaynflazz");
   }
+ return res.json();
+}
