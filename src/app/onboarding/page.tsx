@@ -19,7 +19,7 @@ export default function OnboardingPage() {
     return () => document.body.classList.remove('no-scroll');
   }, []);
 
-  const next = () => setStep((s) => Math.min(3, (s + 1) as Step));
+  const next = () => setStep((s) => Math.min(3, s + 1) as Step);
 
   const finish = () => {
     if (wa) {
